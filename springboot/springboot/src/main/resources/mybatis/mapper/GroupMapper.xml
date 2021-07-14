@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.GroupMapper">
+  <select id="queryGroupList" resultType="Group">
+    select * from grp
+  </select>
+  <select id="queryGroupById" resultType="Group">
+    select * from grp where id=#{id}
+  </select>
+  <select id="queryGroup" resultType="Integer">
+    select max(id) from grp
+  </select>
+  <select id="addGroup" parameterType="Group">
+    insert into grp (id,place,time,events,consumption,actual,finish) values(#{id},#{place},#{time},#{events},#{consumption},#{actual},#{finish})
+  </select>
+  <select id="updateGroup" parameterType="Group">
+    update grp set place=#{place},time=#{time},events=#{events},consumption=#{consumption},actual=#{actual},finish=#{finish} where id=#{id}
+  </select>
+  <select id="deleteGroup" parameterType="int">
+    delete from grp where id=#{id}
+  </select>
+  <select id="queryGroupByFinish" resultType="Group">
+    select * from grp where finish=#{finish}
+  </select>
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.MemberMapper">
+    <select id="queryMemberList" resultType="Member">
+    select * from member
+  </select>
+    <select id="queryMemberById" resultType="Member">
+    select * from member where id=#{id}
+  </select>
+
+
+  <select id="queryMemberByName" resultType="Member">
+    select * from member where name=#{name}
+  </select>
+  <select id="queryMember" resultType="Integer">
+    select max(id) from member
+  </select>
+  <select id="queryMemberByGroup" resultType="Member">
+    select * from member where grp=#{grp}
+  </select>
+    <select id="addMember" parameterType="Member">
+    insert into member (id,name,expense,grp,money,email,leader,son) values(#{id},#{name},#{expense},#{grp},#{money},#{email},#{leader},#{son})
+  </select>
+    <select id="updateMember" parameterType="Member">
+    update member set name=#{name},expense=#{expense},grp=#{grp},money=#{money},email=#{email},leader=#{leader},son=#{son}  where id=#{id}
+  </select>
+    <select id="deleteMember" parameterType="int">
+    delete from member where id=#{id}
+  </select>
+  <select id="list" resultType="Member">
+    select *  from member
+  </select>
+  <select id="countMember" resultType="Integer">
+    select count(id) from member where grp=#{grp}
+  </select>
+</mapper>

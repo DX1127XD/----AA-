@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>编辑</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content=""/>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Stylesheets -->
+    <link href="/css/style1.css" rel='stylesheet' type='text/css' />
+    <!--// Stylesheets -->
+    <!--fonts-->
+    <!-- title -->
+
+
+    <!-- body -->
+    <!--//fonts-->
+</head>
+
+<body>
+<header>
+    <h1>修改信息</h1>
+</header>
+<div class="w3ls-contact">
+
+    <!-- form starts here -->
+    <form th:action="@{/update}" method="post">
+        <div class="agile-field-txt">
+            <label>
+                ID:(不可修改)</label>
+            <input  th:value="${grp.getId()}" type="text" name="id" id="id" placeholder=" " required="" readonly="readonly" />
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                时间:</label>
+            <input  th:value="${grp.getTime()}" type="text" name="time" id="time" placeholder=" " required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                地点 :</label>
+            <div class="left-wthree">
+                <input  th:value="${grp.getPlace()}" type="text" name="place"  id ="place" required="">
+            </div>
+
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                预算:</label>
+            <input  th:value="${grp.getConsumption()}" type="text" name="consumption" id="consumption" placeholder=" " required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label>
+                主要活动 :</label>
+            <div class="left-wthree">
+                <input th:value="${grp.getEvents()}" type="text" name="events"  id ="events" required="">
+            </div>
+
+        </div>
+        <div class="w3ls-contact  w3l-sub">
+            <input type="submit" value="确认">
+        </div>
+
+    </form>
+</div>
+<!-- //form ends here -->
+<div class="copy-wthree">
+    <p>Copyright &copy; 2021.Company name All rights reserved.</a></p>
+</div>
+</body>
+<!-- //Body -->
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.UserMapper">
+    <select id="queryUserList" resultType="User">
+    select * from users
+  </select>
+    <select id="queryUserByUsername" resultType="User">
+    select * from users where username=#{username}
+  </select>
+  <select id="queryUser" resultType="Integer">
+    select max(id) from users
+  </select>
+  <select id="queryUsernameById" resultType="String">
+    select username from users where id=#{id}
+  </select>
+  <select id="queryPasswordByUsername" resultType="String">
+    select password from users where username=#{username}
+  </select>
+  <select id="queryUserByLogin" resultType="User">
+    select * from users where login=#{login}
+  </select>
+  <select id="queryIdByUsername" resultType="Integer">
+    select id from users where username=#{username}
+  </select>
+    <select id="addUser" parameterType="User">
+    insert into users (id,username,name,password,login,grp,mail) values(#{id},#{username},#{name},#{password},#{login},#{grp},#{mail})
+  </select>
+    <select id="updateUser" parameterType="User">
+    update users set username=#{username},name=#{name},password=#{password},login=#{login},grp=#{grp},mail=#{mail} where id=#{id}
+  </select>
+    <select id="deleteUser" parameterType="Integer">
+    delete from users where id=#{id}
+  </select>
+
+</mapper>

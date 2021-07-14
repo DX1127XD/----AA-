@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>开团</title>
+  <!-- Meta-Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="keywords" content=""/>
+
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- //Meta-Tags -->
+  <!-- Stylesheets -->
+  <link href="/css/style1.css" rel='stylesheet' type='text/css' />
+  <!--// Stylesheets -->
+  <!--fonts-->
+  <!-- title -->
+  
+	
+  <!-- body -->
+  <!--//fonts-->
+</head>
+
+<body>
+  <header>
+    <h1>开团</h1>
+  </header>
+  <div class="w3ls-contact">
+
+    <!-- form starts here -->
+    <form th:action="@{/Add}" method="post">
+      <div class="agile-field-txt">
+        <label>
+          时间:</label>
+        <input type="text" name="time" id="time" placeholder=" " required="" />
+      </div>
+      <div class="agile-field-txt">
+        <label>
+          地点 :</label>
+          <div class="left-wthree">
+            <input type="text" name="place"  id ="place" required="">
+          </div>      
+       
+      </div>
+      <div class="agile-field-txt">
+        <label>
+          预算 :</label>
+        <div class="left-wthree">
+          <input type="text" name="consumption"  id ="consumption" required="">
+        </div>
+
+      </div>
+      <div class="agile-field-txt">
+        <label>
+          主要活动 :</label>
+        <div class="left-wthree">
+          <input type="text" name="events"  id ="events" required="">
+        </div>
+
+      </div>
+      <div class="agile-field-txt">
+        <label>
+          子项目 :</label>
+        <div class="left-wthree">
+          <input type="text" name="son"  id ="son" required="">
+        </div>
+
+      </div>
+      <div class="w3ls-contact  w3l-sub">
+        <input type="submit" value="立即成团">
+      </div>
+
+    </form>
+  </div>
+  <!-- //form ends here -->
+  <div class="copy-wthree">
+    <p>Copyright &copy; 2021.Company name All rights reserved.</a></p>
+  </div>
+
+</body>
+<!-- //Body -->
+
+</html>
